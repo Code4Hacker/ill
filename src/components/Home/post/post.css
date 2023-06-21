@@ -22,8 +22,8 @@
     border-radius: 10px;
 }
 .posted_image img{
-    height: 250px;
-    object-fit: cover;
+    min-height: 250px;
+    object-fit: contain;
 }
 .shadow{
     position: absolute;
