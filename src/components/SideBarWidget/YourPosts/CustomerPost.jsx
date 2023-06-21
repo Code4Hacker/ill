@@ -6,6 +6,7 @@ import AddPost from '../../PostAdd/AddPost';
 import jQuery from 'jquery';
 import image from '../../images/testprofile.jpg';
 import Loader from '../../loading/Loader';
+import { Toaster } from 'react-hot-toast';
 const CustomerPost = () => {
   const [messags, setMessags] = useState();
   var [theme, setTheme] = useState();
@@ -34,6 +35,7 @@ const CustomerPost = () => {
   },[]);
   return (
     <div className={`handler your-posts ${theme ? 'darkmode': ''}`}>
+      <Toaster/>
       <Sidebar/>
       <AddPost/>
       <div className="main">

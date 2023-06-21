@@ -7,6 +7,7 @@ import testprofile from '../../images/about-bg.jpg';
 import { Camera } from '@mui/icons-material';
 import Posts from '../../Home/PersonInfo/PrivatePost';
 import Loader from '../../loading/Loader';
+import toast, { Toaster }  from 'react-hot-toast';
 import axios from 'axios';
 const Profile = () => {
   function roundTo(value, places){
@@ -24,15 +25,46 @@ const Profile = () => {
     reader.readAsDataURL(file);
     reader.onloadstart = function(){
       console.log("Starting ...");
+      toast.success('starting ...', {
+        style: {
+          border: '1px solid red',
+          padding: '16px',
+          color: 'red',
+        },
+        iconTheme: {
+          primary: 'orange',
+          secondary: '#FFFAEE',
+        },
+      });
     }
     reader.onload = function(){
       window.localStorage.setItem("miniProfile", reader.result);
       document.querySelector(".mini_photo").src=localStorage.miniProfile;
       document.querySelector(".top-bar .image img").src=localStorage.miniProfile;
-      console.log("done");
+      toast.success('Upload was Sucessiful!', {
+        style: {
+          border: '1px solid green',
+          padding: '16px',
+          color: 'green',
+        },
+        iconTheme: {
+          primary: 'blue',
+          secondary: '#FFFAEE',
+        },
+      });
     }
     reader.onerror = function(){
-      console.log("Sorry", reader.error);
+      toast.error('Opps, there was and Error During Upload!', {
+        style: {
+          border: '1px solid red',
+          padding: '16px',
+          color: 'red',
+        },
+        iconTheme: {
+          primary: 'orange',
+          secondary: '#FFFAEE',
+        },
+      });
     }
     
   }
@@ -48,17 +80,50 @@ const Profile = () => {
     let sizes = file.size/1000024;
     if(sizes>1.5){
       alert("Attention! the file size Exceed, It might Cause an Error or won't load or Error on Changing another Profile if will have large size too: "+ file.name +","+roundTo(sizes,3)+"Mb\nAt least should be Below 1.5Mb");
+      toast("Attention! the file size Exceed, It might Cause an Error or won't load or Error on Changing another Profile if will have large size too: "+ file.name +","+roundTo(sizes,3)+"Mb\nAt least should be Below 1.5Mb",{
+        duration:6000
+      });
     }
     reader.onloadstart = function(){
-      console.log("Starting ...");
+      toast.success('starting ...', {
+        style: {
+          border: '1px solid red',
+          padding: '16px',
+          color: 'red',
+        },
+        iconTheme: {
+          primary: 'orange',
+          secondary: '#FFFAEE',
+        },
+      });
     }
     reader.onload = function(){
       window.localStorage.setItem("backProfile", reader.result);
       document.querySelector(".back_photo").src=localStorage.backProfile;
-      console.log("done");
+      toast.success('Upload was Sucessiful!', {
+        style: {
+          border: '1px solid green',
+          padding: '16px',
+          color: 'green',
+        },
+        iconTheme: {
+          primary: 'blue',
+          secondary: '#FFFAEE',
+        },
+      });
     }
     reader.onerror = function(){
-      console.log("Sorry", reader.error);
+      toast.error('Opps, there was and Error During Upload!', {
+        style: {
+          border: '1px solid red',
+          padding: '16px',
+          color: 'red',
+        },
+        iconTheme: {
+          primary: 'orange',
+          secondary: '#FFFAEE',
+        },
+      });
     }
     
   }
@@ -93,6 +158,7 @@ const Profile = () => {
   const {username, first_name, last_name, birthdate, country, email, gender, numbers } = usrinf;
   return (
     <div className={`handler profile ${theme ? 'darkmode':''}`}>
+      <Toaster/>
       <Sidebar/>
       <div className="main">
             <div className="put-top" data-aos="fade-up">

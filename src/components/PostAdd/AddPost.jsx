@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './addpost.css';
 import jQuery from 'jquery';
+import { toast } from 'react-hot-toast';
 const AddPost = () => {
   const [image, setImage] = useState([]);
   const [message, setMessage] = useState('');
@@ -18,7 +19,17 @@ const AddPost = () => {
     reader = new FileReader();
     reader.readAsDataURL(file);
     reader.onloadstart = function () {
-      console.log("Post Analysing ...");
+      toast.success('Loading Upload ...', {
+        style: {
+          border: '1px solid red',
+          padding: '16px',
+          color: 'red',
+        },
+        iconTheme: {
+          primary: 'orange',
+          secondary: '#FFFAEE',
+        },
+      });
     }
     reader.onload = function () {
       setImage(this.result);
@@ -26,26 +37,67 @@ const AddPost = () => {
     reader.onloadend = function () {
     }
     reader.onerror = function () {
-      alert("Opps, there was and Error During Upload");
+      toast.success('Opps, there was and Error During Upload', {
+        style: {
+          border: '1px solid #713200',
+          padding: '16px',
+          color: '#713200',
+        },
+        iconTheme: {
+          primary: '#713200',
+          secondary: '#FFFAEE',
+        },
+      });
+
     }
     for (let i = 0; i < file.length; i++) {
          const element = file[i];
          reader = new FileReader();
          reader.readAsDataURL(element);
          reader.onloadstart = function(){
-             console.log("Post Analysing ...");
+          toast.success('Loading Upload ...', {
+            style: {
+              border: '1px solid red',
+              padding: '16px',
+              color: 'red',
+            },
+            iconTheme: {
+              primary: 'orange',
+              secondary: '#FFFAEE',
+            },
+          });
          }
          reader.onload = function(){
              let image = document.createElement("img");
              image.setAttribute("src", this.result);
              document.querySelector(".image_posting").append(image);
-             console.log("Done: "+file.length+"Posts Added ...")
+             toast.success('Done: "+file.length+"Posts Added ...', {
+              style: {
+                border: '1px solid red',
+                padding: '16px',
+                color: 'red',
+              },
+              iconTheme: {
+                primary: 'orange',
+                secondary: '#FFFAEE',
+              },
+            });
          }
          reader.onloadend = function(){
              setImage(this.result);
          }
          reader.onerror = function(){
-             alert("Opps, there was and Error During Upload");
+             toast.success('Opps, there was and Error During Upload!', {
+              style: {
+                border: '1px solid red',
+                padding: '16px',
+                color: 'red',
+              },
+              iconTheme: {
+                primary: 'orange',
+                secondary: '#FFFAEE',
+              },
+            });
          }            
       }
 
