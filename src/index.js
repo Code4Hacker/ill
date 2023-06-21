@@ -2,7 +2,7 @@ import React, { Children } from "react";
 import { createRoot } from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
-import './app.css';
+import './index.css';
 import 'animate.css';
 import 'aos/dist/aos.css';
 import AOS from 'aos';
