@@ -1,0 +1,41 @@
+.top-bar{
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    position: relative;
+    padding: 12px;
+    border: none;
+}
+.top-bar .image img{
+    height: 35px;
+    width: 35px;
+    border: 2px solid rgb(6,15,46);
+    object-fit: cover;
+    margin-top: -10px;
+    margin-bottom: -10px;
+    border-radius: 50%;
+    font-size: small;
+}
+.top-bar .link span{
+    font-size: small;
+    margin-left: 10px;
+}
+.float-right{
+    float: right;
+}
+.float-left{
+    float: left;
+}
+.top-bar .float-right{
+    display: flex;
+    flex-direction: row;
+}
+.togglemode button{
+    margin-left: 10px;
+    border-radius: 50px;
+    height: 30px;
+    width: 30px;
+    font-size: x-small;
+    background-color: rgb(255, 255, 255);
+    border: none;
+    color: rgb(83, 83, 83);
+}

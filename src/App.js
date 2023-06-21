@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import React, { useState, useEffect } from "react";
+import Login from "./components/Login";
+import { Toaster } from "react-hot-toast";
+const App = () => {
+    let [theme, setTheme] = useState();
+    useEffect(() => {
+        if (window.localStorage.darkmode !== undefined || window.localStorage.darkmode !== null) {
+            // eslint-disable-next-line
+            theme = window.localStorage.darkmode;
+            setTheme(theme);
+        }
+    }, [theme]);
+    return (
+        <div className={`home ${theme ? 'darkmode' : ''}`}>
+            <Toaster />
+            <div className="holder">
+                <div className="waves-orange"></div>
+                <Login />
+            </div>
+        </div>
+    );
 }
-
 export default App;

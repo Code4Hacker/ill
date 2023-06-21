@@ -1,0 +1,30 @@
+.post_area{
+    height: 82vh;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+.post_area .row{
+    align-items: center;
+    justify-content: center;
+}
+.graffiti{
+    background-color: white;
+    border-radius: 10px;
+    margin: 10px;
+    border-top: 5px solid rgb(255, 188, 3);
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.11);
+}
+.darkmode ::selection{
+    color:var(--orange) !important;
+    background-color: var(--light-up) !important;
+}
+.darkmode .graffiti{
+    background-color: white;
+    border-radius: 10px;
+    margin: 10px;
+    border-top: 5px solid rgb(236, 162, 2);
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.11);
+}
+.home .side-bar button:nth-child(1) .link,.darkmode .bolder{
+    color: rgb(255, 255, 255);
+}

@@ -1,0 +1,67 @@
+.your-posts .side-bar button{
+    background: none;
+    background-color: rgba(255, 255, 255, 0) !important;
+}
+.your-posts .side-bar button:nth-child(3){
+    background: linear-gradient(-90deg,transparent,rgba(163, 57, 57, 0.692));
+    background-color: rgb(230,163,39) !important;
+}
+.your-posts .side-bar button:nth-child(3) .link{
+    color: rgb(255, 255, 255);
+}
+.your-posts .side-bar button:nth-child(5){
+    background-color: rgba(230, 230, 230, 0.185) !important;
+}
+.post_counter{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.post_counter span{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    text-transform: uppercase;
+}
+.main{
+    position: relative;
+}
+.addPost{
+    position: fixed;
+    top: 97%;
+    padding: 10px;
+    width: 50px;
+    height: 50px;
+    color: var(--black) !important;
+    background-color: var(--orange);
+    background:linear-gradient(90deg, var(--orange),red);
+    left: 50%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    transition: .2s ease-in-out;
+    transform: translate(-50%,-97%);
+    z-index: 3;
+    box-shadow: 0px 0px 10px 0px var(--trans-bk);
+
+}
+.addPost:hover{
+    position: fixed;
+    top: 97%;
+    padding: 10px;
+    width: 55px;
+    height: 55px;
+    color: var(--black) !important;
+    background-color: var(--orange);
+    background:linear-gradient(90deg, var(--orange),red);
+    left: 50%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+    transform: translate(-50%,-97%);
+    z-index: 3;
+
+}

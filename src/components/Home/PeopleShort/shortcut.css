@@ -1,0 +1,195 @@
+.people{
+    position: relative;
+    width: 100px;
+    overflow: hidden;
+    height: 100vh;
+    /* background: linear-gradient(360deg,white,rgba(230, 163, 39, 0.185)); */
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    background-color: white;
+    border: .1px solid rgb(240, 240, 240);
+    backdrop-filter: blur(40px);
+    display: block;
+}
+.expand{
+    position: relative;
+    width: 400px !important;
+    overflow: hidden;
+    display: block;
+    height: 100vh;
+    /* background: linear-gradient(360deg,white,rgba(230, 163, 39, 0.185)); */
+    border-top-left-radius: 50px;
+    border-bottom-left-radius: 50px;
+    background-color: white;
+    border: .1px solid rgb(240, 240, 240);
+    backdrop-filter: blur(40px);
+}
+.expand button span:nth-child(2){
+    display: block !important;
+    margin: 10px;
+    margin-top: 5px;
+}
+.expand button .link, .people .link, .shortcut-people .link{
+    display: flex;
+    gap: 4;
+    flex-direction: row;
+}
+.shortcut-people .lists{  
+    display: flex;
+    margin-top: 50px;
+    flex-direction: column;
+}
+
+.shortcut-people .title span{
+    background: rgba(255, 255, 255, 0);
+    box-shadow: none;
+}
+.shortcut-people button span:nth-child(2){
+    display: none;
+    font-size: small;
+}
+.shortcut-people{
+    text-align: center;
+}
+.shortcut-people .image img{
+    height: 45px;
+    width: 45px;
+    border: 2px solid rgb(6,15,46);
+    object-fit: cover;
+    margin-top: -10px;
+    margin-bottom: -10px;
+    border-radius: 50%;
+    font-size: small;
+}
+.shortcut-people .bi{
+    margin: 10px;
+    height: 50px;
+    color: white;
+    background:linear-gradient(60deg,rgb(230,163,39),rgb(117, 8, 8));
+    padding: 10px;
+    border-radius: 50px;
+    width: 50px;
+    font-size: small;
+}
+.shortcut-people .title{
+    text-align: start;
+    margin:10px;
+}
+.shortcut-people button{    
+    text-align: start;
+    border: none;
+    padding: 10px;
+    background-color: rgba(228, 228, 228, 0);
+    margin: 8px;
+    border-radius: 10px;
+}
+.shortcut-people .toggleSL{
+    position: fixed;
+    top: calc(100% - 10%);
+    background-color: rgba(163, 87, 0, 0);
+    width: 100%;
+    border-top: 1px solid rgb(224, 224, 224);
+    padding: 10px;
+    text-align: center;
+    color: rgb(6,15,46);
+}
+.shortcut-people .icon-large{
+    height: 50px !important;
+    width: 50px !important;
+}
+.rotate-180{
+    transform: rotate(180deg);
+    animation:rotate_point .41s ease-in-out;
+}
+.rotate-0{
+    transform: rotate(0deg);
+    animation:rotate .41s ease-in-out;
+}
+.show{
+    display: block;
+}
+.hide{
+    display: none;
+}
+@keyframes rotate{
+    from{
+        transform: rotate(180deg);
+    }
+    to{
+        transform: rotate(0deg);
+    }
+}
+@-webkit-keyframes rotate{
+    from{
+        transform: rotate(180deg);
+    }
+    to{
+        transform: rotate(0deg);
+    }
+}
+@-moz-keyframes rotate{
+    from{
+        transform: rotate(180deg);
+    }
+    to{
+        transform: rotate(0deg);
+    }
+}
+@keyframes rotate_point{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(180deg);
+    }
+}
+@-webkit-keyframes rotate_point{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(180deg);
+    }
+}
+@-moz-keyframes rotate_point{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(180deg);
+    }
+}
+@media screen and (max-width:550px){
+    .people{
+        position: fixed;
+        min-width: 100%;
+        z-index: 3;
+        width: 100%;
+        padding: 7px;
+        border-radius: 50px;
+        top: 0%;
+        left: 50%;
+        transform: translate(-50%,0%);
+        background:transparent !important;
+        height:auto;
+        display: flex;
+        border-radius: 0px;
+    }
+    .people .lists{
+        margin-top: 0px;
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+    }  
+.shortcut-people .image img{
+    height: 40px;
+    width: 40px;
+    border: 2px solid rgb(6,15,46);
+    object-fit: cover;
+    margin: -10px;
+    margin-top: -10px;
+    margin-bottom: -10px;
+    border-radius: 50%;
+    font-size: small;
+}
+}

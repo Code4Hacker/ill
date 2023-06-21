@@ -1,0 +1,168 @@
+.post{
+    margin: 10px;
+    padding: 10px;
+    background-color: white;
+    border-radius: 10px;
+}
+.post:hover{
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.116);
+    border-radius: 10px;
+}
+.message_post button{
+    padding: 0px !important;
+    width: 40px !important;
+}
+.posted_image{
+    width: 300px;
+    overflow: hidden;
+}
+.posted_image,.post img{
+    position: relative;
+    width: 100%;
+    border-radius: 10px;
+}
+.posted_image img{
+    height: 250px;
+    object-fit: cover;
+}
+.shadow{
+    position: absolute;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    backdrop-filter: blur(10px);
+    height: 100%;
+    color: rgb(255, 255, 255);
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.13);
+}
+.posted_image .shadow{
+    display: none;
+    animation: .5s fadeIn;
+    cursor: pointer;
+}
+.posted_image:hover .shadow{
+    display: block;
+}
+.image_tools{
+    position: absolute;
+    margin: -10px;
+    top: 100%;
+    transform: translateY(-90%);
+    width: 100%;
+}
+.user_and_capt{
+    float: left;
+    display: grid;
+    margin: 10px;
+    margin-bottom: 0px;
+}
+.iconed{
+    float: right;
+    display: grid;
+    margin: 10px;
+    margin-bottom: 0px;
+}
+.iconed .cart:nth-child(2){
+    float: right;
+    display: flex;
+}
+.iconed .cart:nth-child(1){
+    text-align: end;
+}
+.small{
+    font-size: small;
+}
+.message_and_likes{
+    display: flex;
+    flex-direction: row;
+}
+.message_and_likes button{
+    position: relative;
+    background: none;
+    border: none;
+    padding: 10px;
+    outline: none;
+    width: 100%;
+}
+.message_and_likes .buttons:nth-child(1){
+    border-right: 1px solid rgb(233, 233, 233);
+}
+.messages{
+    display: none;
+    animation: .5s fadeIn ease-in-out;
+    position: absolute;
+    padding-bottom: 10px;
+    width:150%;
+    max-height: 200px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.116);
+    background-color: white;
+    z-index: 3;
+    overflow: hidden;
+    border-radius: 10px;
+    margin: 10px;
+}
+.message_and_likes .buttons{
+    width: 100%;
+    position: relative;
+}
+.message_and_likes .buttons:nth-child(1):hover .messages{
+    display: block;
+    animation: .5s fadeIn ease-in-out;
+    position: absolute;
+    padding-bottom: 10px;
+    width:150%;
+    max-height: 200px;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.116);
+    background-color: white;
+    z-index: 3;
+    overflow: hidden;
+    border-radius: 10px;
+    margin: 10px;
+    margin-top: -10px;
+}
+.messages .message_post{
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    padding: 5px;
+    border-bottom: 1px solid rgb(236, 236, 236);
+}.messages .message_post input{
+    background: none;
+    outline: none;
+    border: none;
+    font-size: small;
+    width: 100%;
+}
+.messages_comment{
+    font-size: small;
+    position: relative;
+    width: 100%;
+    max-height: 20vh;
+    overflow-y:scroll;
+}
+.post_one{
+    margin-top: 10px;
+    overflow-x: hidden;
+}
+.post_one .txt{
+    font-style: italic;
+    margin-left: 10px;
+    color: rgb(129, 129, 129);
+}
+.post_one .flex button{
+    padding: 0px;
+    color: rgb(230,163,39);
+}
+.flex{
+    display: flex;
+    flex-direction: row;
+}
+.post_one img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+}
+.description{
+    border-bottom: 1px solid rgb(233, 232, 232);
+}

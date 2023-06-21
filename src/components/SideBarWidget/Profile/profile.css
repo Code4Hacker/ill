@@ -1,0 +1,226 @@
+.profile .side-bar button{
+    background: none;
+    background-color: rgba(212, 212, 212, 0) !important;
+}
+.profile .side-bar button:nth-child(2){
+    background: linear-gradient(-90deg,transparent,rgba(163, 57, 57, 0.692));
+    background-color: rgb(230,163,39) !important;
+}
+.profile .side-bar button:nth-child(5){
+    background-color: rgba(230, 230, 230, 0.185) !important;
+}
+.profile .side-bar button:nth-child(2) .link{
+    color: rgb(255, 255, 255);
+}
+.profile div::-webkit-scrollbar-thumb{
+    background-color: transparent ;
+}
+.banner{
+    position: relative;
+    width: 100%;
+    height: 300px;
+    border-radius: 10px;
+}
+.mini-profile .shadow{
+    display: none;
+    animation: .3s fadeIn ease-in-out;
+}
+.mini-profile:hover .shadow{
+    display: block;
+    animation: .3s fadeIn ease-in-out;
+}
+.backImg{
+    position: absolute;
+    z-index: 3;
+    left: 98%;
+    top: 98%;
+    transform: translate(-98%,-98%);
+}
+.backImg button{
+    background-color: var(--trans-bk);
+    color: var(--orange);
+    font-size: small;
+    display: flex;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+}
+.backImg button:hover{
+    background-color: var(--black);
+}
+.mrg-10{
+    margin: 10px;
+}
+.gray{
+    color: rgb(105, 105, 105);
+}
+.darkmode .gray{
+    color: rgb(214, 214, 214);
+}
+.banner .shadow.landscape{
+    border-radius: 10px;
+    backdrop-filter: none;
+}
+.banner img{
+    position: relative;
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+    border-radius: 10px;
+}
+.profile-kit{
+    position: absolute;
+    top: 80%;
+    z-index: 3;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow: hidden;
+}
+.mini-profile{
+    position: relative;
+    margin-bottom: 10px;
+    width: 120px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 120px;
+    background-color: var(--white-slim);
+    z-index: 3;
+    border-radius: 50%;
+    border: 2px solid var(--light-up);
+    overflow: hidden;
+}
+
+.mini-profile img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    position: relative;
+}
+.transform-50-to-50{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.mini-profile button{
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: var(--white-slim);
+}
+.mrg-top-150{
+    margin-top: 150px;
+}
+.scores{
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    text-align: center;
+    flex-direction: row;
+}
+.margin-bottom-10px{
+    margin-bottom: 10px;
+}
+.scores .title{
+    font-size: 20px;
+    display: flex;
+}
+.mrg-top-50{
+    margin-top: 50px;
+}
+.slim-font{
+    font-weight: var(--slim-font);
+}
+.uppercase{
+    text-transform: uppercase;
+}
+.bolder{
+    font-weight: 700;
+    color: var(--black);
+}
+.location{
+    margin: 7px;
+    color: var(--fade);
+}
+.profile-img img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    object-fit: cover;
+}
+.profile-img span{
+    margin-left: 10px;
+}
+.lists.profile-img{
+    display: grid;
+    text-align: start;
+    justify-content: start;
+    align-items: start;
+}
+.lists.profile-img button{
+    margin: 7px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+.mrg-none{
+    margin: 0px;
+}
+.mrg-right{
+    margin: none;
+    margin-right: 5px;
+}
+.profile-img button,profile-img .link{
+    background: none;
+    text-align: start;
+    align-items: start;
+    white-space: nowrap;
+    font-weight: 100;
+    border: none;
+}
+.more{
+    text-decoration: none;
+    color: var(--orange);
+    text-align: center;
+}
+.clicked svg{
+    width: 17px;
+    color: rgb(253, 143, 0);
+    height: 17px;
+    animation:.41s zoom-in ease-in-out;
+}
+@keyframes zoom-in {
+    from{
+        width: 0px;
+        height: 0px;
+    }
+    to{
+        width:17px;
+        height: 17px;
+    }
+}
+@-webkit-keyframes zoom-in {
+    from{
+        width: 0px;
+        height: 0px;
+    }
+    to{
+        width:17px;
+        height: 17px;
+    }
+}
+@-moz-keyframes zoom-in {
+    from{
+        width: 0px;
+        height: 0px;
+    }
+    to{
+        width:17px;
+        height: 17px;
+    }
+}
