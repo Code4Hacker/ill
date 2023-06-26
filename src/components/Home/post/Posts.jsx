@@ -57,7 +57,6 @@ const Posts = ({ posted }) => {
     allComments();
     const user = async () => {
       axios.get('https://www.the-graffiti.com/userDetails.php').then(response => {
-        console.log(response.data);
         if (response.data) {
           let i = response.data[0].length;
           for (let t = 0; t < i; t++) {

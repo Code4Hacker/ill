@@ -120,7 +120,7 @@ const AddPost = () => {
         for (let t = 0; t < i; t++) {
           if (response.data[0][t].username.toLowerCase() === username.toLowerCase()) {
             setUsrinf(response.data[0][t].id);
-            console.log(response.data[0][t].id);
+            // console.log(response.data[0][t].id);
           }
         }
       }
