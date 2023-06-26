@@ -6,9 +6,9 @@ import jQuery from 'jquery';
 import { toast } from 'react-hot-toast';
 const AddPost = () => {
   const [image, setImage] = useState([]);
-  const [message, setMessage] = useState('');
+  const [msg, setMsg] = useState('');
   const [usrinf, setUsrinf] = useState('');
-  const [messages, setMessages] = useState([]);
+  const [msgs, setMsgs] = useState([]);
   const fileclicker = () => {
     document.getElementById("post").click();
   }
@@ -129,14 +129,18 @@ const AddPost = () => {
   const handleSubmit = event => {
     event.preventDefault();
     // Send data to API
+    let message = msg.replace(/'/g, "\\'");
+
+    setMsg((msg.replace(/'/g, "\\'")));
+    console.log(message)
     axios.post('https://www.the-graffiti.com/index.php', { image, message, usrinf })
       .then(response => {
-        // Refresh messages
-        console.log()
+        // Refresh msgs
+        console.log(msg)
         axios.get('https://www.the-graffiti.com/index.php')
           .then(response => {
-            setMessages(response.data);
-            console.log(messages);
+            setMsgs(response.data);
+            console.log(msgs);
           })
           .catch(error => {
             console.log(error);
@@ -148,7 +152,7 @@ const AddPost = () => {
 
     // Clear form fields
     setImage('');
-    setMessage('');
+    setMsg('');
   };
   return (
     <div className="shadow addpost">
@@ -163,7 +167,7 @@ const AddPost = () => {
         <div className="image_posting">
           <img src={image} alt="" />
         </div>
-        <textarea style={{ margin: '10px', width: "95%" }} placeholder="Description" value={message} onChange={event => setMessage(event.target.value)} />
+        <textarea style={{ margin: '10px', width: "95%" }} placeholder="Description" value={msg} onChange={event => setMsg(event.target.value)} />
         <div className="button">
           <input type="file" name="" id="post" onChange={newpost} hidden multiple accept='image/*' />
           <button style={{ width: '200px' }} onClick={fileclicker}>select photo</button>
