@@ -104,7 +104,9 @@ const CustomerPost = () => {
               </div>
             </div>
             <div className="container">
-              <div className="row">
+              <div className="row" style={{
+                marginBottom:'140px'
+              }}>
                 {
                   messags ? messags.map((post) => <Posts posted={post} key={post.id} />) : <Loader />
                 }
