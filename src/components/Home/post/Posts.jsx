@@ -1,7 +1,6 @@
 import { Bookmark, Message, Send } from '@mui/icons-material';
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import jQuery from 'jquery';
 import demo from '../../images/work-4.jpg';
 import './post.css';
 import Comment from './comments/Comment';
