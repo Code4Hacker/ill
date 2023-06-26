@@ -130,15 +130,36 @@ const Profile = () => {
   let [theme, setTheme] = useState('');
   let [messags, setMessags] = useState();
   const [usrinf, setUsrinf] = useState('');
+  const [user, setUser] = useState("");
   useEffect(() => {
-    const phpdata = async () => {
-      const res = await fetch('https://www.the-graffiti.com/index.php');
-      const getthem = await res.json();
-      const threeItems = getthem.slice(0,3);
-      setMessags(threeItems);
-    }
-    phpdata();
     let username = window.localStorage.userId;
+    axios.get('https://www.the-graffiti.com/userDetails.php').then(response => {
+      if (response.data) {
+        let i = response.data[0].length;
+        for (let t = 0; t < i; t++) {
+          if (response.data[0][t].username.toLowerCase() === username.toLowerCase()) {
+            setUser(response.data[0][t].id);
+            if (response.data[0][t].id !== undefined) {
+              // phpdata(response.data[0][t].id);
+              axios.get("https://www.the-graffiti.com/index.php").then(
+                response => {
+                  let filteredObjects = response.data.filter(obj => obj.userID === user);
+                  if (filteredObjects) {
+                    if(filteredObjects.length > 3){
+                      filteredObjects = filteredObjects.splice(0,3);
+                      setMessags(filteredObjects);
+                    }else{
+                      setMessags(filteredObjects);
+                    }
+                  }
+
+                }
+              ).catch(error => { console.log(error) });
+            }
+          }
+        }
+      }
+    }).catch(error => { console.log(error); });
     axios.get('https://www.the-graffiti.com/userDetails.php').then(response => {
       if(response.data){
         let i = response.data[0].length;
@@ -154,6 +175,7 @@ const Profile = () => {
       theme = window.localStorage.darkmode;
       setTheme(theme);
     }
+
   },[]);
   const {username, first_name, last_name, birthdate, country, email, gender, numbers } = usrinf;
   return (

@@ -132,14 +132,14 @@ const AddPost = () => {
     let message = msg.replace(/'/g, "\\'");
 
     setMsg((msg.replace(/'/g, "\\'")));
-    console.log(message)
+    // console.log(message)
     axios.post('https://www.the-graffiti.com/index.php', { image, message, usrinf })
       .then(response => {
         // Refresh msgs
         axios.get('https://www.the-graffiti.com/index.php')
           .then(response => {
             setMsgs(response.data);
-            console.log(msgs);
+            // console.log(msgs);
           })
           .catch(error => {
             console.log(error);
@@ -152,6 +152,9 @@ const AddPost = () => {
     // Clear form fields
     setImage('');
     setMsg('');
+    jQuery(".shadow.addpost").fadeOut({
+      duration:400
+    });
   };
   return (
     <div className="shadow addpost">

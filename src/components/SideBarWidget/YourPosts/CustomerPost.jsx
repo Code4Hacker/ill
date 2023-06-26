@@ -28,22 +28,17 @@ const CustomerPost = () => {
         for (let t = 0; t < i; t++) {
           if (response.data[0][t].username.toLowerCase() === username.toLowerCase()) {
             setUser(response.data[0][t].id);
-            if(response.data[0][t].id !== undefined){
+            if (response.data[0][t].id !== undefined) {
               // phpdata(response.data[0][t].id);
               axios.get("https://www.the-graffiti.com/index.php").then(
                 response => {
                   let filteredObjects = response.data.filter(obj => obj.userID === user);
-                  if(filteredObjects){
-                    if(filteredObjects.length > 3){
-                      filteredObjects = filteredObjects.splice(0,3);
-                      setMessags(filteredObjects);
-                    }else{
-                      setMessags(filteredObjects);
-                    }
+                  if (filteredObjects) {
+                    setMessags(filteredObjects);
                   }
-                  
+
                 }
-              ).catch(error => {console.log(error)});
+              ).catch(error => { console.log(error) });
             }
           }
         }
@@ -105,7 +100,7 @@ const CustomerPost = () => {
             </div>
             <div className="container">
               <div className="row" style={{
-                marginBottom:'140px'
+                marginBottom: '140px'
               }}>
                 {
                   messags ? messags.map((post) => <Posts posted={post} key={post.id} />) : <Loader />
