@@ -13,6 +13,7 @@ const Posts = ({ posted }) => {
   const [allmsg, setAllmsg] = useState([]);
   const [num, setNum] = useState(0);
   const [postedUser, setPostedUser] = useState("");
+  const [display, setDisplay] = useState(false);
   const [text, setText] = useState(message.length < 210 ? message : (message).substring(0, 210) + " ... Continue");
   const phpdata = async () => {
     var formdata = new FormData();
@@ -41,17 +42,12 @@ const Posts = ({ posted }) => {
       .catch(error => console.log('error', error));
     setComments_('');
   }
-  const closingMsg = () => {
-    jQuery(".msg_holder").fadeOut({
-      easing: 'linear',
-      duration: 500
-    })
-  }
   const OpenMsg = () => {
-    jQuery(".msg_holder").fadeIn({
-      easing: 'linear',
-      duration: 500
-    })
+    if(display === true){
+      setDisplay(false);
+    }else{
+      setDisplay(true);
+    }
   }
   useEffect(() => {
     const allComments = async () => {
@@ -60,17 +56,13 @@ const Posts = ({ posted }) => {
       setAllmsg(getthem);
     }
     allComments();
-    jQuery(".msg_holder").fadeOut({
-      easing: 'linear',
-      duration: 100
-    });
     const user = async () => {
       axios.get('https://www.the-graffiti.com/userDetails.php').then(response => {
         console.log(response.data);
         if (response.data) {
           let i = response.data[0].length;
           for (let t = 0; t < i; t++) {
-            if(response.data[0][t].id === userID){
+            if (response.data[0][t].id === userID) {
               setPostedUser(response.data[0][t].username);
             }
           }
@@ -103,10 +95,10 @@ const Posts = ({ posted }) => {
           margin: '10px'
         }} onClick={fullview}>
           <div style={{
-            fontStyle:'italic',
-            fontWeight:'bold'
+            fontStyle: 'italic',
+            fontWeight: 'bold'
           }} className='gradients'><span style={{
-            fontWeight:'400'
+            fontWeight: '400'
           }}>Posted By</span> {postedUser}</div>
           {text}
         </div>
@@ -139,10 +131,10 @@ const Posts = ({ posted }) => {
         </div>
 
       </div>
-      <div className="msg_holder message_and_likes">
+      <div className={`msg_holder message_and_likes ${display ? "show" : "hide"}`}>
 
         <div className="messages">
-          <div className="closerOne" onClick={closingMsg}>
+          <div className="closerOne" onClick={OpenMsg}>
             <span>close</span>
           </div>
           <div className="message_post">

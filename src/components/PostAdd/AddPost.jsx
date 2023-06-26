@@ -136,7 +136,6 @@ const AddPost = () => {
     axios.post('https://www.the-graffiti.com/index.php', { image, message, usrinf })
       .then(response => {
         // Refresh msgs
-        console.log(msg)
         axios.get('https://www.the-graffiti.com/index.php')
           .then(response => {
             setMsgs(response.data);
