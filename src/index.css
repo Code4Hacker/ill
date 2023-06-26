@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Belanosima&display=swap');
 @font-face {
     font-family: 'painterzregular';
     src: url('painterz-webfont.woff2') format('woff2'),
@@ -11,11 +12,13 @@
 }
 html{
     scroll-behavior:smooth ;
+    font-family: 'Belanosima', sans-serif !important;
 }
 .box-for-checking-if{
     font-family: cursive;
 }
 body.darkmode{
+    font-family: 'Belanosima', sans-serif !important;
     background-color: black;
 }
 :root{
@@ -63,7 +66,7 @@ body.darkmode{
     min-height: 100vh;
     width: 100%;
     margin: -10px;
-    font-family: cursive;
+    font-family: 'Belanosima', sans-serif;
 }
 .waves-orange{
     background-color: var(--orange);

@@ -14,13 +14,16 @@ const Loader = () => {
           });
         }
       });
-    }, 6000);
+    }, 10000);
   }
   useEffect(() => { endloader()},[]);
   return (
     <div style={{textAlign:'center',justifyContent:'center', alignItems:'center',justifyItems:'center',position:'relative'}}>
       <div className="error_log">
-            <p className="">Oops, Connection Error or Try to reload the Page</p>
+            <p style={{
+              fontSize:'small',
+              fontWeight:'bold'
+            }}><span className='gradients'>Oops, Connection Error or Try to reload the Page</span></p>
         </div>
         <div className="loader" style={{
             width:'35px',

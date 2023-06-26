@@ -3,6 +3,8 @@
     padding: 10px;
     background-color: white;
     border-radius: 10px;
+    border-radius: 10px;
+    overflow: hidden;
 }
 .post:hover{
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.116);
@@ -88,20 +90,6 @@
 .message_and_likes .buttons:nth-child(1){
     border-right: 1px solid rgb(233, 233, 233);
 }
-.messages{
-    display: none;
-    animation: .5s fadeIn ease-in-out;
-    position: absolute;
-    padding-bottom: 10px;
-    width:150%;
-    max-height: 200px;
-    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.116);
-    background-color: white;
-    z-index: 3;
-    overflow: hidden;
-    border-radius: 10px;
-    margin: 10px;
-}
 .message_and_likes .buttons{
     width: 100%;
     position: relative;
@@ -143,7 +131,7 @@
 }
 .post_one{
     margin-top: 10px;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 .post_one .txt{
     font-style: italic;
@@ -165,4 +153,49 @@
 }
 .description{
     border-bottom: 1px solid rgb(233, 232, 232);
+}
+
+.msg_holder{
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.226);
+    width: 100%;
+    backdrop-filter: blur(40px);
+    z-index: 3;
+    top: 0;
+    left: 0px;
+    height: 100%;
+    border-radius: 50px;
+}
+.messages{
+    position: fixed;
+    top: 50%;
+    cursor: pointer;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition:.4s all linear ;
+    z-index: 3;
+    background-color: white;
+    width: 60%;
+    border-radius: 10px;
+    padding: 10px;
+    max-height: 50%;
+}
+.messages button{
+    border: none;
+    background: none;
+    padding: 10px;
+    border-radius: 50px;
+    
+}.closerOne{
+    padding: 10px;
+    text-align: center;
+    color: white;
+    max-width: 200px;
+    margin-top: -10px !important;
+    text-transform: uppercase;
+    background: linear-gradient(-90deg,rgb(255, 134, 21),rgb(250, 53, 53));
+    margin: 10px;
+    border-bottom-left-radius: 10px;
+    box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.164);
+    border-bottom-right-radius: 10px;
 }
